@@ -11,10 +11,18 @@ tol = 0.1
   (5, 4, 90, round((90 * 0.45) / ((64 * 0.025) ** 2), 1)),
   (5, 10, 200, round((200 * 0.45) / ((70 * 0.025) ** 2), 1)),
   (5, 6, 250, round((250 * 0.45) / ((66 * 0.025) ** 2), 1)),
+  (5, 8, 0, None), #Zero weight
+  (0, 0, 150, None) #Zero Height
+  (-5, 8, 150, None) #Negative Height
+  (5, 8, -150, None), #Negative Weight
 ])
 
 def test_BMICalc(feet, inches, weight, expBMI): 
-  assert abs(BMICalc(feet, inches, weight) - expBMI) < tol
+  if expBMI is None:
+    with pytest.raises(ValueError):
+      BMICalc(feet, inches, weight)
+  else:
+    assert abs(BMICalc(feet, inches, weight) - expBMI) < tol
 
 
 #Tests the classification logic function using strong boundary testing for creating test cases
@@ -29,7 +37,7 @@ def test_BMICalc(feet, inches, weight, expBMI):
   (29.8, "Overweight"), #Just inside the upper boundary of overweight
   (29.9, "Overweight"), #On the upper boundary of overweight
   (30.0, "Obese"), #On the lower boundary of obese
-  (35.0, "Obese"), #Inside of the obese range
+  (30.1, "Obese"), #Inside of the obese range
 ])
 
 def test_Categorization(bmi, expCat):
