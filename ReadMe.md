@@ -1,6 +1,6 @@
 Instructions for the BMI Calculator:
 
-1. In the environment of your choosing and with at least version 3.12.1 of python installed, use the `requirements.txt` to install pytest.
+1. In the environment of your choosing and with at least version 3.12.1 of python installed, use the `requirements.txt` to install pytest with the command `pip install -r requirements. txt`. Python includes pip but if for some reason you need to install it, a link to the install instructions is here: https://pip.pypa.io/en/stable/installation/
 2. Make sure both files are located at the same directory, otherwise they cannot read from one another.
 3. To run the BMI Calculator program on its own, use the command `python bmiCalculator.py`.
 4. To run the unit tests, use the command `pytest bmiTest.py`
