@@ -1,5 +1,5 @@
 import pytest
-from BodyMassIndex import BMICalc, Categorization
+from bmiCalculator import BMICalc, Categorization
 
 #Tolerance for change is 0.1
 tol = 0.1
@@ -12,8 +12,8 @@ tol = 0.1
   (5, 10, 200, round((200 * 0.45) / ((70 * 0.025) ** 2), 1)),
   (5, 6, 250, round((250 * 0.45) / ((66 * 0.025) ** 2), 1)),
   (5, 8, 0, None), #Zero weight
-  (0, 0, 150, None) #Zero Height
-  (-5, 8, 150, None) #Negative Height
+  (0, 0, 150, None), #Zero Height
+  (-5, 8, 150, None), #Negative Height
   (5, 8, -150, None), #Negative Weight
 ])
 

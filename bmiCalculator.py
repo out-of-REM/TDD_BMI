@@ -3,7 +3,9 @@ def BMICalc(feet, inches, weight):
     height = float(((feet * 12) + inches) * 0.025)
 
     if height <= 0:
-        raise ValueError("Height values cannot be zero or negative")
+        raise ValueError("Values cannot be zero or negative.")
+    if weight <= 0:
+        raise ValueError("Values cannot be zero or negative.")
 
     bodyMassIndex = round(weight_kg / (height ** 2), 1)
     return bodyMassIndex
@@ -32,5 +34,5 @@ if __name__ == "__main__":
 
         print(f"Your BMI is: {bmi} and your category is: {category}")
 
-    except ValueError as e:
-        print(f"Error: {e}")
+    except ValueError:
+        print(f"Error: {ValueError}")
