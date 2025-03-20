@@ -13,9 +13,9 @@ def BMICalc(feet, inches, weight):
 
 
 def Categorization(bodyMassIndex):
-    if bodyMassIndex < 18.5:
+    if bodyMassIndex < 18.4:
         return "Underweight"
-    elif 18.5 <= bodyMassIndex <= 24.9:
+    elif 18.4 <= bodyMassIndex <= 24.9:  ##Boundary shift being induced at the lower bound of normal weight by shifting 18.5 to 18.4
         return "Normal Weight"
     elif 25 <= bodyMassIndex <= 29.9:
         return "Overweight"
